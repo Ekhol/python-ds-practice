@@ -40,3 +40,17 @@ def list_manipulation(lst, command, location, value=None):
         >>> list_manipulation(lst, 'add', 'dunno') is None
         True
     """
+
+    if command.lower() == "remove":
+        if location.lower() == "end":
+            return lst.pop()
+        elif location.lower() == "beginning":
+            return lst.pop(0)
+
+    if command.lower() == "add":
+        if location.lower() == "end":
+            lst.append(value)
+            return lst
+        elif location.lower() == "beginning":
+            lst.insert(0, value)
+            return lst
